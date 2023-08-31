@@ -1,0 +1,28 @@
+$primary-color: #001f3f;
+$secondary-color: #2d465f;
+$tertiary-color: #42702F;
+$primary-text-color: #1d1f21;
+$secondary-text-color: #96cbfe;
+$tertiary-text-color: #696870;
+$background-color:#e0e0e0;
+$font-stack: 'Open Sans', sans-serif;
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    font-size: 62.5%;
+  }
+
+  body {
+    background: $background-color;
+    color: $primary-text-color;
+    font-family: $font-stack;
+    svg path {
+      stroke: currentColor;        
+    }
+  }
