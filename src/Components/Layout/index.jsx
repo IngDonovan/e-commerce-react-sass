@@ -1,6 +1,10 @@
-const Layout = () => {
+import './Layout.scss';
+
+const Layout = ({ children }) => {
     return(
-        <h1>Layout</h1>
+        <div className="layout flex flex-col items-center bg-[#212121] text-white">
+            {children}  
+        </div>
     );
 };
 

@@ -1,8 +1,12 @@
+import { useContext } from "react";
+import Layout from "../../Components/Layout";
 
 
 const Home = () => {
     return(
-        <h1>Home</h1>
+        <Layout>
+            <h1>home</h1>    
+        </Layout>
     );
 };
 
