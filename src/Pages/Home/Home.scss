@@ -1,0 +1,43 @@
+@import '../../index.scss';
+
+
+.searchSection{
+    width: 320px;
+    display: flex;
+    flex-direction: column;    
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+
+    div {
+        position: relative;
+        margin: 16px 0px;
+        h1{
+            font-size: $tx-xxl;
+            font-weight: 500;
+        }
+    }
+    input {
+        width: 100%;
+        display: flex;
+        padding: 14px;
+        border-radius: 10px;
+        border: none;
+        background: $bg-linearGrad;
+        box-shadow: $shad-Flat;
+    }
+    input::placeholder {
+        color: #757575;
+      }
+    input:focus {
+        outline-color: rgb(0, 119, 255);
+    }
+
+}
+
+.cardsView {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 16px 0px;
+}
