@@ -1,6 +1,43 @@
+@import '../../index.scss';
 
 header{
+    color: $primary-color;
+    background: $background-color;
+    margin-bottom: 20px;
     nav{
-        background: $primary-color;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 32px;
+        font-size: $tx-base;
+        font-weight: 300;
+        box-shadow: $shad-Flat;
+        div{
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            span{
+                font-size: $tx-l;
+                font-weight: bold;
+            }
+            ul{
+                list-style: none;
+                display: flex;
+                gap: 12px;
+            }
+            .categories{
+                display: none;
+            @media (min-width: 640px){
+                display: flex;
+            }
+            }
+            .myAccount{
+                display: none;
+            @media (min-width: 1024px){
+                display: flex;
+            }
+            }
+            
+        }
     }
 }

@@ -6,7 +6,7 @@ const NavBar = () => {
             <nav>
                 <div>
                     <span>E-ComPage</span>
-                    <ul>
+                    <ul className='categories'>
                         <li>All</li>
                         <li>Clothes</li>
                         <li>Electronics</li>
@@ -15,8 +15,17 @@ const NavBar = () => {
                         <li>Others</li>
                     </ul>
                 </div>
-                <div></div>
-                barra
+                <div>
+                    <ul className='myAccount'>
+                        <li>email@gmail.com</li>
+                        <li>My Orders</li>
+                        <li>My Account</li>
+                    </ul>
+                    <ul>
+                        <li>Sign In</li>
+                        <li>Car</li>
+                    </ul>
+                </div>
             </nav>
         </header>
     );

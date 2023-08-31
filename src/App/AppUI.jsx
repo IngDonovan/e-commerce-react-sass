@@ -2,6 +2,12 @@ import { BrowserRouter, useRoutes } from 'react-router-dom';
 import { EcomContext } from "../Context";
 import NavBar from '../Components/NavBar';
 import Home from '../Pages/Home';
+import MyAccount from '../Pages/MyAccount';
+import MyOrder from '../Pages/MyOrder';
+import MyOrders from '../Pages/MyOrders';
+import NotFound from '../Pages/NotFound';
+import SignIn from '../Pages/SignIn';
+import SignOut from '../Pages/SignOut';
 
 const AppRoutes = () => {
   let routes = useRoutes ([
@@ -12,14 +18,14 @@ const AppRoutes = () => {
     // {path: '/furnitures', element: <Home />},
     // {path: '/toys', element: <Home />},
     // {path: '/others', element: <Home />},
-    // {path: '/my-account', element: <MyAccount />},
-    // {path: '/my-order', element: <MyOrder />},
-    // {path: '/my-orders', element: <MyOrders />},
-    // {path: '/my-orders/last', element: <MyOrder />},
-    // {path: '/my-orders/:id', element: <MyOrder />},
-    // {path: '/*', element: <NotFound />},
-    // {path: '/sign-in', element: <SignIn />},
-    // {path: '/sign-out', element: <SignOut />},
+    {path: '/my-account', element: <MyAccount />},
+    {path: '/my-order', element: <MyOrder />},
+    {path: '/my-orders', element: <MyOrders />},
+    {path: '/my-orders/last', element: <MyOrder />},
+    {path: '/my-orders/:id', element: <MyOrder />},
+    {path: '/*', element: <NotFound />},
+    {path: '/sign-in', element: <SignIn />},
+    {path: '/sign-out', element: <SignOut />},
   ]);
   return routes;
 }
@@ -30,7 +36,7 @@ function AppUI() {
     <>
       <BrowserRouter>
         <NavBar />
-        <h1>hola</h1>
+
         <AppRoutes />
       </BrowserRouter>
     </>

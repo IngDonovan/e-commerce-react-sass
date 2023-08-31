@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { EcomProvider } from '../Context';
 
-import './App.scss'
 import AppUI from './AppUI'
+import './App.scss'
 
 function App() {
 
