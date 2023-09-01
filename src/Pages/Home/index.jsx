@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { EcomContext } from "../../Context";
 import Layout from "../../Components/Layout";
 import Card from "../../Components/Card";
+import ProductDetail from "../../Components/ProductDetail";
 import './Home.scss';
 
 const Home = () => {
@@ -39,6 +40,7 @@ const Home = () => {
       <section className="cardsView">
         {renderView()}
       </section>
+      <ProductDetail />
     </Layout>
   );
 };
