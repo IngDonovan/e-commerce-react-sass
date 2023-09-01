@@ -12,8 +12,11 @@ $tx-l: 1.6rem;
 $tx-xl: 1.8rem;
 $tx-xxl: 2rem;
 $bg-linearGrad:linear-gradient(225deg, #cacaca, #f0f0f0);
+$bg-linearSmGrad:linear-gradient(225deg, #f0f0f0, #cacaca);
 $shad-Flat:-20px 20px 60px #bebebe,
 20px -20px 60px #ffffff;
+$shad-smFlat: 7px -7px 14px #bebebe,
+-7px -7px 14px #ffffff;
 
 
 

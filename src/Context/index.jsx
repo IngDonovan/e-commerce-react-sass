@@ -14,7 +14,7 @@ const EcomProvider = ({children}) => {
                 const response = await fetch(`${ApiUrl}/products?`)
                 const data = await response.json()
                 setItems(data)
-                console.log(data);
+                // console.log(data);
             } catch (error) {
                 console.error(`Oh no, ocurrió un error: ${error}`);
             }

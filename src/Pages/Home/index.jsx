@@ -1,9 +1,26 @@
 import { useContext } from "react";
+import { EcomContext } from "../../Context";
 import Layout from "../../Components/Layout";
-import './Home.scss';
 import Card from "../../Components/Card";
+import './Home.scss';
 
 const Home = () => {
+  const { 
+    items,
+    setItems,
+  } = useContext(EcomContext);
+
+  // console.log(items);
+  const renderView = () => {
+    if (items?.length > 0) {
+      return (
+        <Card key={items[0].id} data={items[0]} />
+      );
+    } else {
+      return <p>No Results Found</p>;
+    }
+  };
+
   return (
     <Layout>
       <section className="searchSection">
@@ -17,7 +34,7 @@ const Home = () => {
             />
       </section>
       <section className="cardsView">
-        <Card />
+        {renderView()}
       </section>
     </Layout>
   );
