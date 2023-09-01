@@ -8,7 +8,7 @@ import './Home.scss';
 const Home = () => {
   const { 
     items,
-    setItems,
+    setSearchByTitle,
   } = useContext(EcomContext);
 
   // console.log(items);
@@ -34,7 +34,7 @@ const Home = () => {
         <input className="search"
             type="text" 
             placeholder="Chaqueta"
-            // onChange={(event) => setSearchByTitle(event.target.value)}
+            onChange={(event) => setSearchByTitle(event.target.value)}
             />
       </section>
       <section className="cardsView">
