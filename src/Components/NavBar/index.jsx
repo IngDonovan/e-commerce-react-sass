@@ -14,7 +14,8 @@ const NavBar = () => {
                 <div>
                     <span>
                         <NavLink to='/'
-                        className='logo'>
+                        className='logo'
+                        onClick={() => setSearchByCategory('')}>
                             E-ComPage
                         </NavLink>
                     </span>
