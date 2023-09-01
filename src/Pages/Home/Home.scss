@@ -42,4 +42,10 @@
     gap: 16px;
     margin: 16px 0px;
     background-color: transparent;
+    @media (min-width: 640px){
+        grid-template-columns: 1fr 1fr;
+    }
+    @media (min-width: 1024px){
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }

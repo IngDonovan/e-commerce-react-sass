@@ -7,13 +7,14 @@ article {
     border-radius: 12px;
     background: $background-color;
     box-shadow: $shad-Flat;
+    cursor: pointer;
     figure {
         width: 100%;
         height: 80%;
         display: flex;
         position: relative;
         background:white;
-        border-radius: 12px;
+        border-radius: 12px 12px 0px 0px;
         
         span{
             position: absolute;
@@ -46,7 +47,21 @@ article {
     }
     p{
         display: flex;
+        padding: 12px;
         justify-content: space-between;
-        
+        align-items: center;
+        gap: 12px;
+        font-size: $tx-base;
+        font-weight: 300;
+        .cardTitle{
+            height: 40px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: wrap;
+        }
+        .cardPrice{
+            font-size: $tx-l;
+            font-weight: bold;
+        }
     }
 }

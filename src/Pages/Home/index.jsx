@@ -13,8 +13,11 @@ const Home = () => {
   // console.log(items);
   const renderView = () => {
     if (items?.length > 0) {
+      
       return (
-        <Card key={items[0].id} data={items[0]} />
+        items.map(item => (
+          <Card key={item.id} data={item} />
+        ))
       );
     } else {
       return <p>No Results Found</p>;
