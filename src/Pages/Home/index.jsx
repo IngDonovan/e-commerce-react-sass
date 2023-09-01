@@ -8,18 +8,22 @@ import './Home.scss';
 const Home = () => {
   const { 
     items,
+    searchByTitle,
     setSearchByTitle,
+    filteredItems,
+    searchByCategory,
   } = useContext(EcomContext);
 
   // console.log(items);
   const renderView = () => {
-    if (items?.length > 0) {
-      
-      return (
-        items.map(item => (
-          <Card key={item.id} data={item} />
-        ))
-      );
+    const itemsToRender = (searchByTitle?.length > 0 || searchByCategory?.length > 0)
+      ? filteredItems
+      : items;
+
+    if (itemsToRender?.length > 0) {
+      return itemsToRender.map(item => (
+        <Card key={item.id} data={item} />
+      ));
     } else {
       return <p>No Results Found</p>;
     }

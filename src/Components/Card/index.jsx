@@ -1,3 +1,4 @@
+import { CgMathPlus } from 'react-icons/Cg';
 import './Card.scss';
 
 
@@ -15,7 +16,7 @@ const Card = ({data}) => {
                 <button type="button" className=""
                 // onClick={() => addProductsToCart(data)}
                 >
-                    +{/* <PlusIcon className="h-6 w-6 text-white"/> */}
+                    < CgMathPlus className='plusIco'/>
                 </button>
             </figure>
             <p className="">

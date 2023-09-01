@@ -15,17 +15,44 @@ header{
         div{
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 16px;
             span{
                 font-size: $tx-l;
                 font-weight: bold;
             }
+            .logo{
+                color: $primary-color;
+                text-decoration: none;
+            }
             ul{
                 list-style: none;
                 display: flex;
+                align-items: center;
                 gap: 12px;
-                cursor: pointer;
+                li {
+                    cursor: pointer;
+                }
             }
+            .linkClass {
+                color: $primary-color;
+                text-decoration: none;
+            }
+            .linkClass:hover{
+                color: $primary-color;
+                text-decoration: underline;
+                text-underline-offset: 3px;
+            }
+            .liShopCar{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 5px;
+            }
+            .shopCar{
+                width: 30px;
+                height: 30px;
+            }
+
             .categories{
                 display: none;
             @media (min-width: 640px){

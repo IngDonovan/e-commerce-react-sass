@@ -7,12 +7,13 @@ const EcomProvider = ({children}) => {
 
     //Get Products
     const [items, setItems] = useState(null);
+    
+    //filtered Items
+    const [filteredItems, setFilteredItems] = useState('');
     //Get Products By Title
     const [searchByTitle, setSearchByTitle] = useState(null);
     //Get Products By Category
-    const [filteredItems, setFilteredItems] = useState('');
     // console.log(searchByTitle);
-    //filtered Items
     const [searchByCategory, setSearchByCategory] = useState(null);
 
     useEffect(() => {
@@ -32,10 +33,18 @@ const EcomProvider = ({children}) => {
     const filteredItemsByTitle = (items, searchByTitle) => {
         return items?.filter(item => item.title.toLowerCase().includes(searchByTitle.toLocaleLowerCase()));
     };
+    const filteredItemsByCategory = (items, searchByCategory) => {
+        return items?.filter(item => item.category.toLowerCase().includes(searchByCategory.toLocaleLowerCase()) )
+    };
+    const filteredItemsByCatAndTitle = (items, searchByTitle) => {
+        return items?.filter(item => item.title.toLowerCase().includes(searchByTitle.toLocaleLowerCase()) )
+    };
 
     useEffect(() => {
         if (searchByTitle) setFilteredItems(filteredItemsByTitle(items,searchByTitle));
-    }, []);
+        if (searchByCategory) setFilteredItems(filteredItemsByCategory(items,searchByCategory));
+        if (searchByTitle && searchByCategory) setFilteredItems(filteredItemsByCatAndTitle(items,searchByTitle));
+    }, [items, searchByTitle, searchByCategory]);
 
 
     return(
@@ -47,6 +56,8 @@ const EcomProvider = ({children}) => {
                 setSearchByTitle,
                 filteredItems,
                 setFilteredItems,
+                searchByCategory,
+                setSearchByCategory,
             }}
         >
             {children}
