@@ -36,7 +36,7 @@ function AppUI() {
     <>
       <BrowserRouter>
         <NavBar />
-
+        
         <AppRoutes />
       </BrowserRouter>
     </>

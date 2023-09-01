@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import Layout from "../../Components/Layout";
 import './Home.scss';
+import Card from "../../Components/Card";
 
 const Home = () => {
   return (
@@ -16,7 +17,7 @@ const Home = () => {
             />
       </section>
       <section className="cardsView">
-        cards
+        <Card />
       </section>
     </Layout>
   );
