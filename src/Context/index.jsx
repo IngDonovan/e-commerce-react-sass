@@ -16,6 +16,20 @@ const EcomProvider = ({children}) => {
     // console.log(searchByTitle);
     const [searchByCategory, setSearchByCategory] = useState(null);
 
+    //Product Detail · Open/close
+    const [isProductDetailOpen, setIsProductDetailOpen] = useState(false);
+    const toggleProductDetail = () =>  setIsProductDetailOpen(!isProductDetailOpen);
+
+    const filteredItemsByTitle = (items, searchByTitle) => {
+        return items?.filter(item => item.title.toLowerCase().includes(searchByTitle.toLocaleLowerCase()));
+    };
+    const filteredItemsByCategory = (items, searchByCategory) => {
+        return items?.filter(item => item.category.toLowerCase().includes(searchByCategory.toLocaleLowerCase()) )
+    };
+    const filteredItemsByCatAndTitle = (items, searchByTitle) => {
+        return items?.filter(item => item.title.toLowerCase().includes(searchByTitle.toLocaleLowerCase()) )
+    };
+
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -29,16 +43,6 @@ const EcomProvider = ({children}) => {
         }
         fetchData()
     }, []);
-
-    const filteredItemsByTitle = (items, searchByTitle) => {
-        return items?.filter(item => item.title.toLowerCase().includes(searchByTitle.toLocaleLowerCase()));
-    };
-    const filteredItemsByCategory = (items, searchByCategory) => {
-        return items?.filter(item => item.category.toLowerCase().includes(searchByCategory.toLocaleLowerCase()) )
-    };
-    const filteredItemsByCatAndTitle = (items, searchByTitle) => {
-        return items?.filter(item => item.title.toLowerCase().includes(searchByTitle.toLocaleLowerCase()) )
-    };
 
     useEffect(() => {
         if (searchByTitle) setFilteredItems(filteredItemsByTitle(items,searchByTitle));
@@ -58,6 +62,9 @@ const EcomProvider = ({children}) => {
                 setFilteredItems,
                 searchByCategory,
                 setSearchByCategory,
+                isProductDetailOpen,
+                setIsProductDetailOpen,
+                toggleProductDetail,
             }}
         >
             {children}

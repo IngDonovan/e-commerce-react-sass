@@ -1,8 +1,8 @@
 @import '../../index.scss';
 
-aside {
+.detailAside {
     width: 100%;
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -21,6 +21,10 @@ aside {
         justify-content: space-between;
         // background: gray;
         font-size: $tx-sm;
+        .xIco{
+            width: 25px;
+            height: 25px;
+        }
     }
     .detailContent {
         width: 100%;
