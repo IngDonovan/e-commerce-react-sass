@@ -20,8 +20,7 @@ const ProductDetail = () => {
             </div>
             <div className='detailContent'>
                 <figure className=''>
-                    <img className=''
-                   />
+                    <img className=''/>
                 </figure>
                 <div className=''>
                     <p className="dtPrice">$109.95</p>
