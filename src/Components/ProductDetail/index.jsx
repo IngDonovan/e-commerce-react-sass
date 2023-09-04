@@ -12,7 +12,7 @@ const ProductDetail = () => {
                 <h2>
                     Detail
                 </h2>
-                <span className="cursor-pointer"
+                <span className="closeIcoSpan"
                 onClick={toggleProductDetail}>
                     <AiOutlineClose 
                     className='xIco'/>

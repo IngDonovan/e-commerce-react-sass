@@ -20,7 +20,11 @@
         align-items: center;
         justify-content: space-between;
         // background: gray;
+
         font-size: $tx-sm;
+        .closeIcoSpan{
+            cursor: pointer;
+        }
         .xIco{
             width: 25px;
             height: 25px;
