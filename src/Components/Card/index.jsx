@@ -4,12 +4,15 @@ import { CgMathPlus } from "react-icons/Cg";
 import "./Card.scss";
 
 const Card = ({ data }) => {
-    const { toggleProductDetail } = useContext(EcomContext);
+    const { 
+      toggleProductDetail,
+      setProductToShow,
+    } = useContext(EcomContext);
 
-const showProduct = () => {
+const showProduct = (productDetail) => {
     // closeCheckoutSideMenu();
     toggleProductDetail();
-    // setProductToShow(productDetail);
+    setProductToShow(productDetail);
 }
   return (
     <article className="">
@@ -19,7 +22,7 @@ const showProduct = () => {
           className=""
           src={data.image}
           alt={data.title}
-          onClick={() => showProduct()}
+          onClick={() => showProduct(data)}
         />
         <button
           type="button"

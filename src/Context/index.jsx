@@ -30,6 +30,8 @@ const EcomProvider = ({children}) => {
         return items?.filter(item => item.title.toLowerCase().includes(searchByTitle.toLocaleLowerCase()) )
     };
 
+    const [productToShow, setProductToShow] = useState({});
+
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -65,6 +67,8 @@ const EcomProvider = ({children}) => {
                 isProductDetailOpen,
                 setIsProductDetailOpen,
                 toggleProductDetail,
+                productToShow,
+                setProductToShow,
             }}
         >
             {children}

@@ -4,7 +4,11 @@ import { AiOutlineClose } from "react-icons/Ai";
 import './ProductDetail.scss';
 
 const ProductDetail = () => {
-    const { isProductDetailOpen, toggleProductDetail } = useContext(EcomContext);
+    const { 
+        isProductDetailOpen, 
+        toggleProductDetail,
+        productToShow,
+    } = useContext(EcomContext);
 
     return(
         <aside className={isProductDetailOpen ? "detailAside" : "hidden"}>
@@ -20,15 +24,17 @@ const ProductDetail = () => {
             </div>
             <div className='detailContent'>
                 <figure className=''>
-                    <img className=''/>
+                    <img className=''
+                    src={productToShow.image}
+                    alt={productToShow.title}/>
                 </figure>
                 <div className=''>
-                    <p className="dtPrice">$109.95</p>
+                    <p className="dtPrice">${productToShow.price}</p>
                     <span className="dtTitle">
-                        Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops
+                        {productToShow.title}
                     </span>
                     <span className='dtDescription'>
-                        Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday
+                        {productToShow.description}
                     </span>
                 </div>
             </div>
