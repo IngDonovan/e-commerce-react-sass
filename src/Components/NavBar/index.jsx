@@ -81,13 +81,11 @@ const NavBar = () => {
           <ul className="myAccount">
             <li>email@gmail.com</li>
             <li>
-              My Orders
               <NavLink to="/my-orders" className="linkClass">
                 My Orders
               </NavLink>
             </li>
             <li>
-              My Account
               <NavLink to="/my-account" className="linkClass">
                 My Account
               </NavLink>
