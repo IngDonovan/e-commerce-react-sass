@@ -14,6 +14,7 @@
     background: $background-color;
     opacity: 0.95;
     box-shadow: $shad-Flat;
+    z-index: 3;
     .detailHeader {
         width: 100%;
         display: flex;
