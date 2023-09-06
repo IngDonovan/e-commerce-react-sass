@@ -25,7 +25,11 @@ const Home = () => {
         <Card key={item.id} data={item} />
       ));
     } else {
-      return <p>No Results Found</p>;
+      return (
+        <p className="notResults">
+          No Results Found
+        </p>
+      );
     }
   };
 
@@ -37,7 +41,7 @@ const Home = () => {
         </div>
         <input className="search"
             type="text" 
-            placeholder="Chaqueta"
+            placeholder="T-Shirts"
             onChange={(event) => setSearchByTitle(event.target.value)}
             />
       </section>

@@ -48,4 +48,12 @@
     @media (min-width: 1024px){
         grid-template-columns: 1fr 1fr 1fr;
     }
+    .notResults{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50vw;
+        height: 50vh;
+        font-size: $tx-xxl;
+    }   
 }
