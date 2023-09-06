@@ -1,66 +1,80 @@
-@import '../../index.scss';
+@import "../../index.scss";
 
+.hidden {
+    display: none;
+}
 .detailAside {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 70px;
+  right: 0px;
+  padding: 20px 32px;
+  border-radius: 0px 0px 12px 12px;
+  background: $background-color;
+  opacity: 0.95;
+  box-shadow: $shad-Flat;
+  z-index: 3;
+  .detailHeader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // background: gray;
+
+    font-size: $tx-sm;
+    .closeIcoSpan {
+      cursor: pointer;
+    }
+    .xIco {
+      width: 25px;
+      height: 25px;
+    }
+  }
+  .detailContent {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 62px;
-    right: 0px;
-    padding: 20px 32px;
-    border-radius: 0px 0px 12px 12px;
-    background: $background-color;
-    opacity: 0.95;
-    box-shadow: $shad-Flat;
-    z-index: 3;
-    .detailHeader {
+    padding: 16px;
+    font-size: $tx-base;
+    figure {
+      width: 100%;
+      height: 250px;
+      background: white;
+      border-radius: 10px;
+      img {
         width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        // background: gray;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+        border-radius: 10px;
+      }
+    }
+    div {
+      display: flex;
+      flex-direction: column;
+      padding-top: 12px;
+      gap: 12px;
+      .dtPrice {
+        align-self: flex-end;
+        font-size: $tx-xxl;
+        font-weight: bold;
+      }
+      .dtTitle {
+        font-size: $tx-xl;
+        font-weight: 500;
+      }
+      .dtDescription {
+        height: 115px;
+        overflow-y: scroll;
+      }
+    }
+  }
 
-        font-size: $tx-sm;
-        .closeIcoSpan{
-            cursor: pointer;
-        }
-        .xIco{
-            width: 25px;
-            height: 25px;
-        }
-    }
-    .detailContent {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        padding: 16px;
-        font-size: $tx-base;
-        figure{
-            width: 100%;
-            border-radius: 10px;
-            img{
-                width: 100%;
-                height: 100%;
-                object-fit: contain;
-            }
-        }
-        div{
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            .dtPrice{
-                
-                align-self: flex-end;
-                font-size: $tx-l;
-                font-weight: bold;
-            }
-            
-        }
-    }
-    
-    @media (min-width: 400px){
-        width: 320px;
-    }
+  @media (min-width: 400px) {
+    width: 320px;
+  }
 }
