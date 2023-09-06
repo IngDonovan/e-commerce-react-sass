@@ -12,7 +12,7 @@ import SignOut from '../Pages/SignOut';
 const AppRoutes = () => {
   let routes = useRoutes ([
     {path: '/', element: <Home />},
-    {path: '/shopping-page', element: <Home />},
+    {path: '/e-commerce-react-sass', element: <Home />},
     {path: '/clothes', element: <Home />},
     {path: '/electronics', element: <Home />},
     {path: '/jewelery', element: <Home />},
