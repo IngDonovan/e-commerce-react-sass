@@ -8,6 +8,7 @@ import MyOrders from '../Pages/MyOrders';
 import NotFound from '../Pages/NotFound';
 import SignIn from '../Pages/SignIn';
 import SignOut from '../Pages/SignOut';
+import CheckoutSideMenu from '../Components/CheckoutSideMenu';
 
 const AppRoutes = () => {
   let routes = useRoutes ([
@@ -36,7 +37,7 @@ function AppUI() {
     <>
       <BrowserRouter>
         <NavBar />
-        
+        <CheckoutSideMenu />
         <AppRoutes />
       </BrowserRouter>
     </>

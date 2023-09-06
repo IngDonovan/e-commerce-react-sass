@@ -8,6 +8,7 @@ const NavBar = () => {
   const { 
     setSearchByCategory,
     count,
+    toggleCheckoutSideMenu,
   } = useContext(EcomContext);
 
   return (
@@ -101,7 +102,9 @@ const NavBar = () => {
               </NavLink>
             </li>
             <li className="liShopCar">
-              <FiShoppingCart className="shopCar" />
+              <FiShoppingCart className="shopCar" 
+              onClick={toggleCheckoutSideMenu}
+              />
               {count}
             </li>
           </ul>

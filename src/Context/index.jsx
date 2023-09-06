@@ -25,6 +25,10 @@ const EcomProvider = ({children}) => {
     //Shopping Cart · Increment quantity
     const [count, setCount] = useState(0);
 
+    //CheckoutSideMenu · Open/close
+    const [isCheckoutSideMenuOpen, setIsCheckoutSideMenuOpen] = useState(false);
+    const toggleCheckoutSideMenu = () =>  setIsCheckoutSideMenuOpen(!isCheckoutSideMenuOpen);
+
 
     const filteredItemsBy = (items, searchBy, typeObj) => {
         if (typeObj === 'category') {
@@ -73,6 +77,9 @@ const EcomProvider = ({children}) => {
                 setProductToShow,
                 count,
                 setCount,
+                isCheckoutSideMenuOpen,
+                setIsCheckoutSideMenuOpen,
+                toggleCheckoutSideMenu,
             }}
         >
             {children}

@@ -1,8 +1,16 @@
-import './CheckoutSidemenu.sass'
+import { useContext } from 'react';
+import { EcomContext } from '../../Context';
+import { AiOutlineClose } from 'react-icons/Ai';
+import './CheckoutSideMenu.sass'
 
 const CheckoutSideMenu = () => {
+  const { 
+    isCheckoutSideMenuOpen,
+  } = useContext(EcomContext);
+
+
   return (
-    <aside className="detailAside">
+    <aside className={isCheckoutSideMenuOpen ? "detailAside" : "hidden"}>
       <div className="detailHeader">
         <h2>Detail</h2>
         <span 
