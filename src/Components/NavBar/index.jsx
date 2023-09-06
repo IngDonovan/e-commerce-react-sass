@@ -5,7 +5,10 @@ import { FiShoppingCart } from "react-icons/fi";
 import "./NavBar.scss";
 
 const NavBar = () => {
-  const { setSearchByCategory } = useContext(EcomContext);
+  const { 
+    setSearchByCategory,
+    count,
+  } = useContext(EcomContext);
 
   return (
     <header>
@@ -98,7 +101,8 @@ const NavBar = () => {
               </NavLink>
             </li>
             <li className="liShopCar">
-              <FiShoppingCart className="shopCar" />0
+              <FiShoppingCart className="shopCar" />
+              {count}
             </li>
           </ul>
         </div>

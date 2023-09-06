@@ -20,17 +20,19 @@ const EcomProvider = ({children}) => {
     const [isProductDetailOpen, setIsProductDetailOpen] = useState(false);
     const toggleProductDetail = () =>  setIsProductDetailOpen(!isProductDetailOpen);
 
-    const filteredItemsByTitle = (items, searchByTitle) => {
-        return items?.filter(item => item.title.toLowerCase().includes(searchByTitle.toLocaleLowerCase()));
-    };
-    const filteredItemsByCategory = (items, searchByCategory) => {
-        return items?.filter(item => item.category.toLowerCase().includes(searchByCategory.toLocaleLowerCase()) )
-    };
-    const filteredItemsByCatAndTitle = (items, searchByTitle) => {
-        return items?.filter(item => item.title.toLowerCase().includes(searchByTitle.toLocaleLowerCase()) )
-    };
-
     const [productToShow, setProductToShow] = useState({});
+
+    //Shopping Cart · Increment quantity
+    const [count, setCount] = useState(0);
+
+
+    const filteredItemsBy = (items, searchBy, typeObj) => {
+        if (typeObj === 'category') {
+            return items?.filter((item) => item.category.toLowerCase().includes(searchBy.toLocaleLowerCase()))
+        }else {
+            return items?.filter((item) => item.title.toLowerCase().includes(searchBy.toLocaleLowerCase()))
+        }
+    }; 
 
     useEffect(() => {
         const fetchData = async () => {
@@ -47,9 +49,9 @@ const EcomProvider = ({children}) => {
     }, []);
 
     useEffect(() => {
-        if (searchByTitle) setFilteredItems(filteredItemsByTitle(items,searchByTitle));
-        if (searchByCategory) setFilteredItems(filteredItemsByCategory(items,searchByCategory));
-        if (searchByTitle && searchByCategory) setFilteredItems(filteredItemsByCatAndTitle(items,searchByTitle));
+        if (searchByTitle) setFilteredItems(filteredItemsBy(items,searchByTitle,"title"));
+        if (searchByCategory) setFilteredItems(filteredItemsBy(items,searchByCategory,"category"));
+        if (searchByTitle && searchByCategory) setFilteredItems(filteredItemsBy(items,searchByTitle,"title"));
     }, [items, searchByTitle, searchByCategory]);
 
 
@@ -69,6 +71,8 @@ const EcomProvider = ({children}) => {
                 toggleProductDetail,
                 productToShow,
                 setProductToShow,
+                count,
+                setCount,
             }}
         >
             {children}

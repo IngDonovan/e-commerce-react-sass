@@ -5,6 +5,8 @@ import "./Card.scss";
 
 const Card = ({ data }) => {
     const { 
+      count,
+      setCount,
       toggleProductDetail,
       setProductToShow,
     } = useContext(EcomContext);
@@ -14,6 +16,11 @@ const showProduct = (productDetail) => {
     toggleProductDetail();
     setProductToShow(productDetail);
 }
+
+const addProductsToCart = () => {
+  setCount(count + 1);
+}
+ 
   return (
     <article className="">
       <figure className="">
@@ -27,7 +34,7 @@ const showProduct = (productDetail) => {
         <button
           type="button"
           className=""
-          // onClick={() => addProductsToCart(data)}
+          onClick={() => addProductsToCart()}
         >
           <CgMathPlus className="plusIco" />
         </button>
