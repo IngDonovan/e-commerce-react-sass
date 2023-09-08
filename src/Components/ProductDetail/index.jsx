@@ -12,7 +12,7 @@ const ProductDetail = () => {
       <div className="detailHeader">
         <h2>Detail</h2>
         <span className="closeIcoSpan" onClick={toggleProductDetail}>
-          <AiOutlineClose className="xIco" />
+          <AiOutlineClose className="xIco" /> 
         </span>
       </div>
       <div className="detailContent">

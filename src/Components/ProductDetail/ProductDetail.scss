@@ -28,11 +28,15 @@
     font-size: $tx-sm;
     .closeIcoSpan {
       cursor: pointer;
+      :hover{
+        color: red;
+      }
     }
     .xIco {
       width: 25px;
       height: 25px;
     }
+
   }
   .detailContent {
     width: 100%;

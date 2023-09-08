@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { EcomContext } from "../../Context";
 import { FiShoppingCart } from "react-icons/fi";
+import { FcMenu } from "react-icons/fc";
+
 import "./NavBar.scss";
 
 const NavBar = () => {
@@ -15,6 +17,11 @@ const NavBar = () => {
     <header>
       <nav>
         <div>
+          <span className="menuMb">
+            <FcMenu className="menuMbIco" 
+              // onClick={toggleCheckoutSideMenu}
+              />
+          </span>
           <span>
             <NavLink
               to="/"
@@ -105,10 +112,70 @@ const NavBar = () => {
               <FiShoppingCart className="shopCar" 
               onClick={toggleCheckoutSideMenu}
               />
-              {count}
+              <p>
+                {count}
+              </p>
             </li>
           </ul>
         </div>
+      </nav>
+      <nav className="navMb">
+        <ul className="categoriesMb">
+          <li>
+            <NavLink
+              to="/"
+              className="linkClass"
+              onClick={() => setSearchByCategory("")}
+            >
+              All
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/clothes"
+              className="linkClass"
+              onClick={() => setSearchByCategory("cloth")}
+            >
+              Clothes
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/electronics"
+              className="linkClass"
+              onClick={() => setSearchByCategory("elec")}
+            >
+              Electronics
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/Jewelery"
+              className="linkClass"
+              onClick={() => setSearchByCategory("jewe")}
+            >
+              Jewelery
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/toys"
+              className="linkClass"
+              onClick={() => setSearchByCategory("toys")}
+            >
+              Toys
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/others"
+              className="linkClass"
+              onClick={() => setSearchByCategory("others")}
+            >
+              Others
+            </NavLink>
+          </li>
+        </ul>
       </nav>
     </header>
   );

@@ -1,3 +1,4 @@
+import { AiOutlineClose } from 'react-icons/Ai';
 import "./OrderCard.scss";
 
 const OrderCard = () => {
@@ -17,7 +18,9 @@ const OrderCard = () => {
           </span>
         </div>
         <div className="orderContainErase">
-          <span>x</span>
+          <span>
+            <AiOutlineClose className="xIco"/>
+          </span>
         </div>
       </div>
     </>

@@ -46,6 +46,10 @@ article {
             background: $background-color;
             box-shadow: $shad-smFlat;
         }
+        button:hover{
+            color: white;
+            background: $primary-color;
+          }
         .plusIco {
             width: 30px;
             height: 30px;

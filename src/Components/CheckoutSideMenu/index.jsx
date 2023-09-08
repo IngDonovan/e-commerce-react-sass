@@ -7,6 +7,7 @@ import './CheckoutSideMenu.scss'
 const CheckoutSideMenu = () => {
   const { 
     isCheckoutSideMenuOpen,
+    toggleCheckoutSideMenu,
   } = useContext(EcomContext);
 
 
@@ -16,7 +17,7 @@ const CheckoutSideMenu = () => {
         <h2>My Order</h2>
         <span 
         className="closeIcoSpan" 
-        // onClick={toggleProductDetail}
+        onClick={toggleCheckoutSideMenu}
         >
           <AiOutlineClose className="xIco" />
         </span>

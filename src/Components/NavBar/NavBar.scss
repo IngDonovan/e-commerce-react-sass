@@ -16,6 +16,18 @@ header{
             display: flex;
             align-items: center;
             gap: 16px;
+            .menuMb{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .menuMbIco{
+                    width: 25px;
+                    height: 25px;
+                }
+                @media (min-width: 640px){
+                    display: none;
+                }
+            }
             span{
                 font-size: $tx-l;
                 font-weight: bold;
@@ -33,20 +45,23 @@ header{
                     cursor: pointer;
                 }
             }
-            .linkClass {
-                color: $primary-color;
-                text-decoration: none;
-            }
-            .linkClass:hover{
-                color: $primary-color;
-                text-decoration: underline;
-                text-underline-offset: 3px;
-            }
+            // .linkClass {
+            //     color: $primary-color;
+            //     text-decoration: none;
+            // }
+            // .linkClass:hover{
+            //     color: $primary-color;
+            //     text-decoration: underline;
+            //     text-underline-offset: 3px;
+            // }
             .liShopCar{
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 gap: 5px;
+                p{
+                    font-weight: bold;
+                }
             }
             .shopCar{
                 width: 30px;
@@ -66,6 +81,27 @@ header{
             }
             }
             
+        }
+    }
+    .linkClass {
+        color: $primary-color;
+        text-decoration: none;
+    }
+    .linkClass:hover{
+        color: $primary-color;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+    .navMb{
+        justify-content: center;
+        .categoriesMb{
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 12px;
+            li {
+                cursor: pointer;
+            }
         }
     }
 }
