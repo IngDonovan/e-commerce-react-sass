@@ -1,0 +1,55 @@
+@import '../../index.scss';
+
+
+.orderContain {
+    background: $background-color;
+    width: 100%; 
+    height: 50px;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    column-gap: 6px;
+    padding: 6px 12px;
+    border-radius: 10px;
+    font-size: $tx-sm;
+    color: $primary-color;
+    box-shadow: $shad-smFlat;
+    .orderContainImg{
+        background: white;
+        grid-column: span 1;
+        border-radius: 10px;
+        img{
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            object-fit: contain;
+        }
+    }
+    .orderContainInfo{
+
+        grid-column: span 3;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-between;
+        .orderInfoTitle{
+            width: 100%;
+
+        }
+        span:nth-child(2){
+            display: flex;
+            width: 100%;
+
+            align-items: center;
+            justify-content: space-between;
+        }
+
+    }
+    .orderContainErase{
+
+        grid-column: span 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+

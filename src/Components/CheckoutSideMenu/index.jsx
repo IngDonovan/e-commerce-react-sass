@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { EcomContext } from '../../Context';
 import { AiOutlineClose } from 'react-icons/Ai';
+import OrderCard from '../OrderCard'
 import './CheckoutSideMenu.scss'
 
 const CheckoutSideMenu = () => {
@@ -21,7 +22,7 @@ const CheckoutSideMenu = () => {
         </span>
       </div>
       <div className='myOrderSection'>
-        content
+        <OrderCard />
       </div>
       <div className="myOrderFooter">
         <span>
