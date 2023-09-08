@@ -20,6 +20,7 @@ header{
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                cursor: pointer;
                 .menuMbIco{
                     width: 25px;
                     height: 25px;
@@ -45,15 +46,7 @@ header{
                     cursor: pointer;
                 }
             }
-            // .linkClass {
-            //     color: $primary-color;
-            //     text-decoration: none;
-            // }
-            // .linkClass:hover{
-            //     color: $primary-color;
-            //     text-decoration: underline;
-            //     text-underline-offset: 3px;
-            // }
+
             .liShopCar{
                 display: flex;
                 align-items: center;

@@ -11,6 +11,8 @@ const NavBar = () => {
     setSearchByCategory,
     count,
     toggleCheckoutSideMenu,
+    isMenuMbOpen,
+    toggleMenuMb,
   } = useContext(EcomContext);
 
   return (
@@ -19,7 +21,7 @@ const NavBar = () => {
         <div>
           <span className="menuMb">
             <FcMenu className="menuMbIco" 
-              // onClick={toggleCheckoutSideMenu}
+              onClick={toggleMenuMb}
               />
           </span>
           <span>
@@ -119,7 +121,7 @@ const NavBar = () => {
           </ul>
         </div>
       </nav>
-      <nav className="navMb">
+      <nav className={isMenuMbOpen ? "navMb" : "hidden"}>
         <ul className="categoriesMb">
           <li>
             <NavLink

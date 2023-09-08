@@ -29,6 +29,9 @@ const EcomProvider = ({children}) => {
     const [isCheckoutSideMenuOpen, setIsCheckoutSideMenuOpen] = useState(false);
     const toggleCheckoutSideMenu = () =>  setIsCheckoutSideMenuOpen(!isCheckoutSideMenuOpen);
 
+    //menu mobile open/close
+    const [isMenuMbOpen, setIsMenuMbOpen] = useState(false);
+    const toggleMenuMb = () => setIsMenuMbOpen(!isMenuMbOpen);
 
     const filteredItemsBy = (items, searchBy, typeObj) => {
         if (typeObj === 'category') {
@@ -80,6 +83,9 @@ const EcomProvider = ({children}) => {
                 isCheckoutSideMenuOpen,
                 setIsCheckoutSideMenuOpen,
                 toggleCheckoutSideMenu,
+                isMenuMbOpen,
+                setIsMenuMbOpen,
+                toggleMenuMb,
             }}
         >
             {children}
