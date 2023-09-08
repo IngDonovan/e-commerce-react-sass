@@ -1,0 +1,33 @@
+@import "../ProductDetail/ProductDetail.scss";
+
+.myOrdersMenu{
+    @extend .detailAside;
+    // height: calc(100vh - 70px);
+    .myOrderHeader{
+        @extend .detailHeader;
+    }
+    .myOrderSection{
+
+    }
+    .myOrderFooter{
+        width: 100%;
+        font-size: $tx-xxl;
+        span{
+            display: flex;
+            justify-content: space-between;
+        }
+        button{
+            width: 100%;
+            padding: 12px 0px;
+            font-size: $tx-xl;
+            border-radius: 10px;
+            // w-full py-3 my-3 rounded-lg bg-white text-black font-medium text-xl
+
+        }
+    }
+    
+}
+
+
+
+

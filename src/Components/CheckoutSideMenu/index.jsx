@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { EcomContext } from '../../Context';
 import { AiOutlineClose } from 'react-icons/Ai';
-import './CheckoutSideMenu.sass'
+import './CheckoutSideMenu.scss'
 
 const CheckoutSideMenu = () => {
   const { 
@@ -10,9 +10,9 @@ const CheckoutSideMenu = () => {
 
 
   return (
-    <aside className={isCheckoutSideMenuOpen ? "detailAside" : "hidden"}>
-      <div className="detailHeader">
-        <h2>Detail</h2>
+    <aside className={isCheckoutSideMenuOpen ? "myOrdersMenu" : "hidden"}>
+      <div className="myOrderHeader">
+        <h2>My Order</h2>
         <span 
         className="closeIcoSpan" 
         // onClick={toggleProductDetail}
@@ -20,19 +20,15 @@ const CheckoutSideMenu = () => {
           <AiOutlineClose className="xIco" />
         </span>
       </div>
-      <div className="detailContent">
-        <figure className="">
-          <img
-            className=""
-            // src={productToShow.image}
-            // alt={productToShow.title}
-          />
-        </figure>
-        <div className="">
-          <p className="dtPrice">$price</p>
-          <span className="dtTitle">Title</span>
-          <span className="dtDescription">description</span>
-        </div>
+      <div className='myOrderSection'>
+        content
+      </div>
+      <div className="myOrderFooter">
+        <span>
+          <p>Total</p>
+          <p>$</p>
+        </span>
+        <button>Confirm</button>
       </div>
     </aside>
   );
