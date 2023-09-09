@@ -10,7 +10,6 @@ const CheckoutSideMenu = () => {
     toggleCheckoutSideMenu,
   } = useContext(EcomContext);
 
-
   return (
     <aside className={isCheckoutSideMenuOpen ? "myOrdersMenu" : "hidden"}>
       <div className="myOrderHeader">
