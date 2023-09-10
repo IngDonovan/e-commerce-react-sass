@@ -13,7 +13,7 @@ const EcomProvider = ({children}) => {
     //Get Products By Title
     const [searchByTitle, setSearchByTitle] = useState(null);
     //Get Products By Category
-    // console.log(searchByTitle);
+
     const [searchByCategory, setSearchByCategory] = useState(null);
 
     //Product Detail · Open/close
