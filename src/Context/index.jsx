@@ -19,7 +19,8 @@ const EcomProvider = ({children}) => {
     //Product Detail · Open/close
     const [isProductDetailOpen, setIsProductDetailOpen] = useState(false);
     const toggleProductDetail = () =>  setIsProductDetailOpen(!isProductDetailOpen);
-
+    
+    //Product Detail · Show Product
     const [productToShow, setProductToShow] = useState({});
 
     //Shopping Cart · Increment quantity
