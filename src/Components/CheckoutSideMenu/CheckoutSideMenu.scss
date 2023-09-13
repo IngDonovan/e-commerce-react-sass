@@ -2,7 +2,6 @@
 
 .myOrdersMenu{
     @extend .detailAside;
-    // height: calc(100vh - 70px);
     gap: 16px;
     .myOrderHeader{
         @extend .detailHeader;
