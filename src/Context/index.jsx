@@ -23,6 +23,9 @@ const EcomProvider = ({children}) => {
     //Product Detail · Show Product
     const [productToShow, setProductToShow] = useState({});
 
+    //Shopping Cart · Add Products to cart
+    const [cartProducts, setCartProducts] = useState([]);
+
     //Shopping Cart · Increment quantity
     const [count, setCount] = useState(0);
 
@@ -87,6 +90,8 @@ const EcomProvider = ({children}) => {
                 isMenuMbOpen,
                 setIsMenuMbOpen,
                 toggleMenuMb,
+                cartProducts,
+                setCartProducts,
             }}
         >
             {children}

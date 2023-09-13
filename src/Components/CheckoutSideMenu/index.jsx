@@ -8,6 +8,7 @@ const CheckoutSideMenu = () => {
   const { 
     isCheckoutSideMenuOpen,
     toggleCheckoutSideMenu,
+    cartProducts,
   } = useContext(EcomContext);
 
   return (
@@ -22,7 +23,17 @@ const CheckoutSideMenu = () => {
         </span>
       </div>
       <div className='myOrderSection'>
-        <OrderCard />
+      {cartProducts.map((product) => (
+          <OrderCard
+            key={product.id}
+            id={product.id}
+            quantity={product.quantity}
+            title={product.title}
+            imageUrl={product.image}
+            price={product.price}
+
+          />
+        ))}
       </div>
       <div className="myOrderFooter">
         <span>

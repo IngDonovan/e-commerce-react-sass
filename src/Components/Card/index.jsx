@@ -9,6 +9,8 @@ const Card = ({ data }) => {
       setCount,
       toggleProductDetail,
       setProductToShow,
+      cartProducts,
+      setCartProducts,
     } = useContext(EcomContext);
 
 const showProduct = (productDetail) => {
@@ -17,8 +19,9 @@ const showProduct = (productDetail) => {
     setProductToShow(productDetail);
 }
 
-const addProductsToCart = () => {
+const addProductsToCart = (productData) => {
   setCount(count + 1);
+  setCartProducts([...cartProducts, productData]);
 }
  
   return (
@@ -34,7 +37,7 @@ const addProductsToCart = () => {
         <button
           type="button"
           className=""
-          onClick={() => addProductsToCart()}
+          onClick={() => addProductsToCart(data)}
         >
           <CgMathPlus className="plusIco" />
         </button>

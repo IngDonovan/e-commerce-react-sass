@@ -4,7 +4,7 @@
 .orderContain {
     background: $background-color;
     width: 100%; 
-    height: 50px;
+    // height: 60px;
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
     column-gap: 6px;
@@ -14,6 +14,8 @@
     color: $primary-color;
     box-shadow: $shad-smFlat;
     .orderContainImg{
+        width: 100%;
+        height: 50px;
         background: white;
         grid-column: span 1;
         border-radius: 10px;
@@ -33,7 +35,9 @@
         justify-content: space-between;
         .orderInfoTitle{
             width: 100%;
-
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         span:nth-child(2){
             display: flex;
