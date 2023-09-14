@@ -1,15 +1,24 @@
 import { useContext } from 'react';
 import { EcomContext } from '../../Context';
 import { AiOutlineClose } from 'react-icons/Ai';
-import OrderCard from '../OrderCard'
-import './CheckoutSideMenu.scss'
+import OrderCard from '../OrderCard';
+import { totalPrice } from "../../Utils";
+import './CheckoutSideMenu.scss';
 
 const CheckoutSideMenu = () => {
   const { 
     isCheckoutSideMenuOpen,
     toggleCheckoutSideMenu,
     cartProducts,
+    setCartProducts,
+    setCount,
   } = useContext(EcomContext);
+
+  const handleDelete = (id) => {
+    const filteredProducts = cartProducts.filter((product) => product.id != id);
+    setCount(cartProducts.length - 1);
+    setCartProducts(filteredProducts);
+  };
 
   return (
     <aside className={isCheckoutSideMenuOpen ? "myOrdersMenu" : "hidden"}>
@@ -31,16 +40,18 @@ const CheckoutSideMenu = () => {
             title={product.title}
             imageUrl={product.image}
             price={product.price}
-
+            handleDelete={handleDelete}
           />
         ))}
       </div>
       <div className="myOrderFooter">
         <span>
           <p>Total</p>
-          <p>$</p>
+          <p>${totalPrice(cartProducts)}</p>
         </span>
-        <button>Confirm</button>
+        <button>
+          Confirm
+        </button>
       </div>
     </aside>
   );

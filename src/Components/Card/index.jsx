@@ -19,11 +19,43 @@ const showProduct = (productDetail) => {
     setProductToShow(productDetail);
 }
 
-const addProductsToCart = (productData) => {
-  setCount(count + 1);
-  setCartProducts([...cartProducts, productData]);
-}
+// const addProductsToCart = (productData) => {
+//   setCount(count + 1);
+//   setCartProducts([...cartProducts, productData]);
+// }
  
+const addProductsToCart = (productData) => {
+        
+  setCount(count + 1);
+
+  const existingProduct = cartProducts.find((product) => product.id === productData.id);
+
+  if (existingProduct) {
+      // Si el producto ya existe, aumenta la cantidad
+      const updatedProduct = {
+        ...existingProduct,
+        quantity: (existingProduct.quantity || 1) + (productData.quantity || 1),
+        
+      };
+      const updatedCartProducts = cartProducts.map((product) => {
+        if (product.id === productData.id) {
+          
+          return updatedProduct;
+        }
+        return product;
+      });
+      
+      setCartProducts(updatedCartProducts);
+    } else {
+      // Si el producto no existe, agrégalo al carrito
+      setCartProducts([...cartProducts, productData]);
+    }
+
+  // setCartProducts([...cartProducts, productData]);
+  // openCheckoutSideMenu();
+
+};
+
   return (
     <article className="">
       <figure className="">

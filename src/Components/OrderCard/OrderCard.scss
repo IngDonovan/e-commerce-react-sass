@@ -46,6 +46,15 @@
             justify-content: space-between;
             font-weight: bold;
         }
+        .infoQuantity{
+            display: flex;
+            gap: 3px;
+        }
+        .icoCar{
+            width: 15px;
+            height: 15px;
+        }
+
 
     }
     .orderContainErase{

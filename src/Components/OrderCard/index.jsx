@@ -4,7 +4,7 @@ import "./OrderCard.scss";
 
 const OrderCard = (props) => {
 
-  const { id, quantity, title, imageUrl, price } = props;
+  const { id, quantity, title, imageUrl, price, handleDelete } = props;
 
   const formatPrice = (price) => {
     return price.toFixed(2); // Limitar a dos decimales
@@ -24,7 +24,7 @@ const OrderCard = (props) => {
             {title}
           </span>
           <span>
-            <span>
+            <span className='infoQuantity'>
               <FiShoppingCart className='icoCar'/>
                 {quantity || 1}
             </span>
@@ -33,7 +33,10 @@ const OrderCard = (props) => {
         </div>
         <div className="orderContainErase">
           <span>
-            <AiOutlineClose className="xIco"/>
+            <AiOutlineClose 
+              className="xIco"
+              onClick={() => handleDelete(id)}
+            />
           </span>
         </div>
       </div>
