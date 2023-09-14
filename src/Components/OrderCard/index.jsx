@@ -1,4 +1,5 @@
 import { AiOutlineClose } from 'react-icons/Ai';
+import { FiShoppingCart } from "react-icons/fi";
 import "./OrderCard.scss";
 
 const OrderCard = (props) => {
@@ -24,7 +25,7 @@ const OrderCard = (props) => {
           </span>
           <span>
             <span>
-                icono 
+              <FiShoppingCart className='icoCar'/>
                 {quantity || 1}
             </span>
             <p>${formatPrice(price * (quantity || 1))}</p>
