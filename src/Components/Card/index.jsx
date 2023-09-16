@@ -39,7 +39,6 @@ const addProductsToCart = (productData) => {
       };
       const updatedCartProducts = cartProducts.map((product) => {
         if (product.id === productData.id) {
-          
           return updatedProduct;
         }
         return product;
