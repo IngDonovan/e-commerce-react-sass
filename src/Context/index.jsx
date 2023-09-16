@@ -3,100 +3,107 @@ import { ApiUrl } from "../Api";
 
 const EcomContext = createContext();
 
-const EcomProvider = ({children}) => {
+const EcomProvider = ({ children }) => {
+  //Get Products
+  const [items, setItems] = useState(null);
 
-    //Get Products
-    const [items, setItems] = useState(null);
-    
-    //filtered Items
-    const [filteredItems, setFilteredItems] = useState('');
-    //Get Products By Title
-    const [searchByTitle, setSearchByTitle] = useState(null);
-    //Get Products By Category
+  //filtered Items
+  const [filteredItems, setFilteredItems] = useState("");
+  //Get Products By Title
+  const [searchByTitle, setSearchByTitle] = useState(null);
+  //Get Products By Category
 
-    const [searchByCategory, setSearchByCategory] = useState(null);
+  const [searchByCategory, setSearchByCategory] = useState(null);
 
-    //Product Detail · Open/close
-    const [isProductDetailOpen, setIsProductDetailOpen] = useState(false);
-    const toggleProductDetail = () =>  setIsProductDetailOpen(!isProductDetailOpen);
-    
-    //Product Detail · Show Product
-    const [productToShow, setProductToShow] = useState({});
+  //Product Detail · Open/close
+  const [isProductDetailOpen, setIsProductDetailOpen] = useState(false);
+  const toggleProductDetail = () =>
+    setIsProductDetailOpen(!isProductDetailOpen);
 
-    //Shopping Cart · Add Products to cart
-    const [cartProducts, setCartProducts] = useState([]);
+  //Product Detail · Show Product
+  const [productToShow, setProductToShow] = useState({});
 
-    //Shopping Cart · Increment quantity
-    const [count, setCount] = useState(0);
+  //Shopping Cart · Add Products to cart
+  const [cartProducts, setCartProducts] = useState([]);
 
-    //CheckoutSideMenu · Open/close
-    const [isCheckoutSideMenuOpen, setIsCheckoutSideMenuOpen] = useState(false);
-    const toggleCheckoutSideMenu = () =>  setIsCheckoutSideMenuOpen(!isCheckoutSideMenuOpen);
+  //Shopping Cart · Increment quantity
+  const [count, setCount] = useState(0);
 
-    //menu mobile open/close
-    const [isMenuMbOpen, setIsMenuMbOpen] = useState(false);
-    const toggleMenuMb = () => setIsMenuMbOpen(!isMenuMbOpen);
+  //CheckoutSideMenu · Open/close
+  const [isCheckoutSideMenuOpen, setIsCheckoutSideMenuOpen] = useState(false);
+  const toggleCheckoutSideMenu = () =>
+    setIsCheckoutSideMenuOpen(!isCheckoutSideMenuOpen);
 
-    const filteredItemsBy = (items, searchBy, typeObj) => {
-        if (typeObj === 'category') {
-            return items?.filter((item) => item.category.toLowerCase().includes(searchBy.toLocaleLowerCase()))
-        }else {
-            return items?.filter((item) => item.title.toLowerCase().includes(searchBy.toLocaleLowerCase()))
-        }
-    }; 
+  //menu mobile open/close
+  const [isMenuMbOpen, setIsMenuMbOpen] = useState(false);
+  const toggleMenuMb = () => setIsMenuMbOpen(!isMenuMbOpen);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch(`${ApiUrl}/products?`)
-                const data = await response.json()
-                setItems(data)
-                // console.log(data);
-            } catch (error) {
-                console.error(`Oh no, ocurrió un error: ${error}`);
-            }
-        }
-        fetchData()
-    }, []);
+  const filteredItemsBy = (items, searchBy, typeObj) => {
+    if (typeObj === "category") {
+      return items?.filter((item) =>
+        item.category.toLowerCase().includes(searchBy.toLocaleLowerCase())
+      );
+    } else {
+      return items?.filter((item) =>
+        item.title.toLowerCase().includes(searchBy.toLocaleLowerCase())
+      );
+    }
+  };
 
-    useEffect(() => {
-        if (searchByTitle) setFilteredItems(filteredItemsBy(items,searchByTitle,"title"));
-        if (searchByCategory) setFilteredItems(filteredItemsBy(items,searchByCategory,"category"));
-        if (searchByTitle && searchByCategory) setFilteredItems(filteredItemsBy(items,searchByTitle,"title"));
-    }, [items, searchByTitle, searchByCategory]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`${ApiUrl}/products?`);
+        const data = await response.json();
+        setItems(data);
+        // console.log(data);
+      } catch (error) {
+        console.error(`Oh no, ocurrió un error: ${error}`);
+      }
+    };
+    fetchData();
+  }, []);
 
+  useEffect(() => {
+    if (searchByTitle)
+      setFilteredItems(filteredItemsBy(items, searchByTitle, "title"));
+    if (searchByCategory)
+      setFilteredItems(filteredItemsBy(items, searchByCategory, "category"));
+    if (searchByTitle && searchByCategory)
+      setFilteredItems(filteredItemsBy(items, searchByTitle, "title"));
+  }, [items, searchByTitle, searchByCategory]);
 
-    return(
-        <EcomContext.Provider 
-            value={{
-                items,
-                setItems,
-                searchByTitle,
-                setSearchByTitle,
-                filteredItems,
-                setFilteredItems,
-                searchByCategory,
-                setSearchByCategory,
-                isProductDetailOpen,
-                setIsProductDetailOpen,
-                toggleProductDetail,
-                productToShow,
-                setProductToShow,
-                count,
-                setCount,
-                isCheckoutSideMenuOpen,
-                setIsCheckoutSideMenuOpen,
-                toggleCheckoutSideMenu,
-                isMenuMbOpen,
-                setIsMenuMbOpen,
-                toggleMenuMb,
-                cartProducts,
-                setCartProducts,
-            }}
-        >
-            {children}
-        </EcomContext.Provider>
-    )
-}
+  return (
+    <EcomContext.Provider
+      value={{
+        items,
+        setItems,
+        searchByTitle,
+        setSearchByTitle,
+        filteredItems,
+        setFilteredItems,
+        searchByCategory,
+        setSearchByCategory,
+        isProductDetailOpen,
+        setIsProductDetailOpen,
+        toggleProductDetail,
+        productToShow,
+        setProductToShow,
+        count,
+        setCount,
+        isCheckoutSideMenuOpen,
+        setIsCheckoutSideMenuOpen,
+        toggleCheckoutSideMenu,
+        isMenuMbOpen,
+        setIsMenuMbOpen,
+        toggleMenuMb,
+        cartProducts,
+        setCartProducts,
+      }}
+    >
+      {children}
+    </EcomContext.Provider>
+  );
+};
 
 export { EcomContext, EcomProvider };

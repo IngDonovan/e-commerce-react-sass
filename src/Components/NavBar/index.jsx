@@ -10,10 +10,17 @@ const NavBar = () => {
   const { 
     setSearchByCategory,
     count,
+    isProductDetailOpen,
+    toggleProductDetail,
     toggleCheckoutSideMenu,
     isMenuMbOpen,
     toggleMenuMb,
   } = useContext(EcomContext);
+
+  const onCheckoutSideMenu = () =>{
+    toggleCheckoutSideMenu();
+    if (isProductDetailOpen) toggleProductDetail();
+  };
 
   return (
     <header>
@@ -112,7 +119,7 @@ const NavBar = () => {
             </li>
             <li className="liShopCar">
               <FiShoppingCart className="shopCar" 
-              onClick={toggleCheckoutSideMenu}
+              onClick={onCheckoutSideMenu}
               />
               <p>
                 {count}

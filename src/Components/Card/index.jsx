@@ -7,22 +7,21 @@ const Card = ({ data }) => {
     const { 
       count,
       setCount,
+      isProductDetailOpen,
       toggleProductDetail,
       setProductToShow,
       cartProducts,
       setCartProducts,
+      isCheckoutSideMenuOpen,
+      toggleCheckoutSideMenu,
     } = useContext(EcomContext);
 
 const showProduct = (productDetail) => {
     // closeCheckoutSideMenu();
-    toggleProductDetail();
-    setProductToShow(productDetail);
+  if (isCheckoutSideMenuOpen) toggleCheckoutSideMenu();
+  toggleProductDetail();
+  setProductToShow(productDetail);
 }
-
-// const addProductsToCart = (productData) => {
-//   setCount(count + 1);
-//   setCartProducts([...cartProducts, productData]);
-// }
  
 const addProductsToCart = (productData) => {
         
@@ -52,6 +51,8 @@ const addProductsToCart = (productData) => {
 
   // setCartProducts([...cartProducts, productData]);
   // openCheckoutSideMenu();
+  if (isProductDetailOpen) toggleProductDetail();
+  if (!isCheckoutSideMenuOpen) toggleCheckoutSideMenu();
 
 };
 
