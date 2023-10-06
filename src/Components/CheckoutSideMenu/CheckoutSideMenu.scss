@@ -11,9 +11,22 @@
         height: 50vh;
         display: flex;
         flex-direction: column;
-        overflow-y: scroll;
+        padding: 12px;
         gap: 12px;
-
+        overflow-y: auto;
+        scrollbar-gutter: stable;
+    }
+        /*Webkit*/
+    .myOrderSection::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+        background-color: transparent;
+    }
+    .myOrderSection::-webkit-scrollbar-thumb {
+        background-color: transparent;
+    }
+    .myOrderSection:hover::-webkit-scrollbar-thumb {
+        background-color: #09C;
     }
     .myOrderFooter{
         width: 100%;
