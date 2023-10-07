@@ -29,6 +29,9 @@ const EcomProvider = ({ children }) => {
   //Shopping Cart · Increment quantity
   const [count, setCount] = useState(0);
 
+  //Shopping Cart · Order
+  const [order, setOrder] = useState([]);
+
   //CheckoutSideMenu · Open/close
   const [isCheckoutSideMenuOpen, setIsCheckoutSideMenuOpen] = useState(false);
   const toggleCheckoutSideMenu = () =>
@@ -99,6 +102,8 @@ const EcomProvider = ({ children }) => {
         toggleMenuMb,
         cartProducts,
         setCartProducts,
+        order,
+        setOrder,
       }}
     >
       {children}

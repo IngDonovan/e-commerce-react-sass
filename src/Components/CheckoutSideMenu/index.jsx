@@ -20,6 +20,23 @@ const CheckoutSideMenu = () => {
     setCartProducts(filteredProducts);
   };
 
+  const handleCheckout = () => {
+    const currentDate = new Date();
+    const formattedDate = `${currentDate.getDate()}.${
+      currentDate.getMonth() + 1
+    }.${currentDate.getFullYear()}`;
+    const formattedTime = `${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`;
+    const dateTime = `${formattedDate} ${formattedTime}`;
+
+    const orderToAdd = {
+      date: dateTime,
+      products: cartProducts,
+      totalProducts: cartProducts.quantity,
+      totalPrice: totalPrice(cartProducts),
+    }
+    console.log(orderToAdd);
+  };
+
   return (
     <aside className={isCheckoutSideMenuOpen ? "myOrdersMenu" : "hidden"}>
       <div className="myOrderHeader">
