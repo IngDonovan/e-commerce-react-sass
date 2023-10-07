@@ -12,6 +12,9 @@ const CheckoutSideMenu = () => {
     cartProducts,
     setCartProducts,
     setCount,
+    order,
+    setOrder,
+    setSearchByTitle,
   } = useContext(EcomContext);
 
   const handleDelete = (id) => {
@@ -31,10 +34,15 @@ const CheckoutSideMenu = () => {
     const orderToAdd = {
       date: dateTime,
       products: cartProducts,
-      totalProducts: cartProducts.quantity,
+      totalProducts: cartProducts.length,
       totalPrice: totalPrice(cartProducts),
     }
     console.log(orderToAdd);
+    setOrder([...order, orderToAdd]);
+    setCartProducts([]);
+    setCount(0);
+    toggleCheckoutSideMenu();
+    setSearchByTitle(null);
   };
 
   return (
@@ -66,7 +74,9 @@ const CheckoutSideMenu = () => {
           <p>Total</p>
           <p>${totalPrice(cartProducts)}</p>
         </span>
-        <button>
+        <button
+          onClick={() => handleCheckout()}
+        >
           Confirm
         </button>
       </div>
