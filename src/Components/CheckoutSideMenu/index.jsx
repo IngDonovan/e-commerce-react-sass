@@ -3,6 +3,7 @@ import { EcomContext } from '../../Context';
 import { AiOutlineClose } from 'react-icons/Ai';
 import OrderCard from '../OrderCard';
 import { totalPrice } from "../../Utils";
+import { Link } from 'react-router-dom';
 import './CheckoutSideMenu.scss';
 
 const CheckoutSideMenu = () => {
@@ -74,11 +75,13 @@ const CheckoutSideMenu = () => {
           <p>Total</p>
           <p>${totalPrice(cartProducts)}</p>
         </span>
-        <button
-          onClick={() => handleCheckout()}
-        >
-          Confirm
-        </button>
+        <Link to="/my-orders/last">
+          <button
+            onClick={() => handleCheckout()}
+            >
+            Confirm
+          </button>
+        </Link>
       </div>
     </aside>
   );
