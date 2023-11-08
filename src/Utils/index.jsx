@@ -10,3 +10,7 @@ export const totalPrice = (products) => {
     const total = products.reduce((acc, product) => acc + product.price * (product.quantity||1), 0);
     return total.toFixed(2);
 };
+
+// export const formatPrice = (price) => {
+//     return price.toFixed(2); // Limitar a dos decimales
+//   };

@@ -1,0 +1,30 @@
+@import '../../index.scss';
+
+.containOrdersCard {
+    width: 400px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 15px;
+    font-size: $tx-xl;
+    font-weight: 600;
+    border-radius: 15px;
+    color: $primary-color;
+    background: $background-color;
+    box-shadow: $shad-Flat;
+    div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        p{
+            text-decoration: none;
+        }
+    }
+}
+.ordersRecorder{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
