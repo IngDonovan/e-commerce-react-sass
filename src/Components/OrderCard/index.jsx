@@ -33,10 +33,15 @@ const OrderCard = (props) => {
         </div>
         <div className="orderContainErase">
           <span>
-            <AiOutlineClose 
-              className="xIco"
-              onClick={() => handleDelete(id)}
-            />
+            {handleDelete && (
+                <AiOutlineClose 
+                className="xIco"
+                onClick={() => handleDelete(id)}
+                />
+              )
+
+            }
+            
           </span>
         </div>
       </div>
