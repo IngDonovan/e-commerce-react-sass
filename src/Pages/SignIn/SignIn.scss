@@ -18,6 +18,24 @@
     gap: 30px;
     width: 50px;
     height: 20px;
+    &.flipped .flip-card__inner {
+      transform: rotateY(180deg);
+    }
+    &.flipped .flip-card__front {
+      box-shadow: none;
+    }
+    &.flipped .slider {
+      background-color: var(--input-focus);
+    }
+    &.flipped .slider:before {
+      transform: translateX(30px);
+    }
+    &.flipped .card-side:before {
+      text-decoration: none;
+    }
+    &.flipped .card-side:after {
+      text-decoration: underline;
+    }
   }
 
   .card-side::before {
@@ -77,21 +95,21 @@
     transition: 0.3s;
   }
 
-  .toggle:checked + .slider {
-    background-color: var(--input-focus);
-  }
+  // .toggle:checked + .slider {
+  //   background-color: var(--input-focus);
+  // }
   
-  .toggle:checked + .slider:before {
-    transform: translateX(30px);
-  }
+  // .toggle:checked + .slider:before {
+  //   transform: translateX(30px);
+  // }
   
-  .toggle:checked ~ .card-side:before {
-    text-decoration: none;
-  }
+  // .toggle:checked ~ .card-side:before {
+  //   text-decoration: none;
+  // }
   
-  .toggle:checked ~ .card-side:after {
-    text-decoration: underline;
-  }
+  // .toggle:checked ~ .card-side:after {
+  //   text-decoration: underline;
+  // }
 
 /* card */ 
 
@@ -108,13 +126,13 @@
     transform-style: preserve-3d;
   }
 
-  .toggle:checked ~ .flip-card__inner {
-    transform: rotateY(180deg);
-  }
+  // .toggle:checked ~ .flip-card__inner {
+  //   transform: rotateY(180deg);
+  // }
   
-  .toggle:checked ~ .flip-card__front {
-    box-shadow: none;
-  }
+  // .toggle:checked ~ .flip-card__front {
+  //   box-shadow: none;
+  // }
   
   .flip-card__front, .flip-card__back {
     padding: 20px;
