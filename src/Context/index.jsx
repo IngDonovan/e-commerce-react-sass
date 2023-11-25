@@ -41,6 +41,10 @@ const EcomProvider = ({ children }) => {
   const [isMenuMbOpen, setIsMenuMbOpen] = useState(false);
   const toggleMenuMb = () => setIsMenuMbOpen(!isMenuMbOpen);
 
+  //sing in click
+  const [isCardFlipped, setIsCardFlipped] = useState(false);
+  const handleCardFlip = () => setIsCardFlipped(!isCardFlipped);
+
   const filteredItemsBy = (items, searchBy, typeObj) => {
     if (typeObj === "category") {
       return items?.filter((item) =>
@@ -104,6 +108,9 @@ const EcomProvider = ({ children }) => {
         setCartProducts,
         order,
         setOrder,
+        isCardFlipped,
+        setIsCardFlipped,
+        handleCardFlip,
       }}
     >
       {children}
