@@ -1,12 +1,13 @@
-@import '../../index.scss';
+// @import '../../index.scss';
+@use '../../index' as mn;
 
 article {
     width: 320px;
     height: 320px;
     flex-direction: column;
     border-radius: 12px;
-    background: $background-color;
-    box-shadow: $shad-Flat;
+    background: mn.$background-color;
+    box-shadow: mn.$shad-Flat;
     
     figure {
         width: 100%;
@@ -21,11 +22,11 @@ article {
             display: flex;
             bottom: 0px;
             margin: 12px;
-            font-size: $tx-sm;
+            font-size: mn.$tx-sm;
             padding: 3px 10px;
             border-radius: 12px;
-            background: $bg-linearSmGrad;
-            box-shadow: $shadow;
+            background: mn.$bg-linearSmGrad;
+            box-shadow: mn.$shadow;
         }
         img{
             width: 100%;
@@ -42,13 +43,13 @@ article {
             border: none;
             border-radius: 12px;
             cursor: pointer;
-            color: $primary-color;
-            background: $background-color;
-            box-shadow: $shad-smFlat;
+            color: mn.$primary-color;
+            background: mn.$background-color;
+            box-shadow: mn.$shad-smFlat;
         }
         button:hover{
             color: white;
-            background: $primary-color;
+            background: mn.$primary-color;
           }
         .plusIco {
             width: 30px;
@@ -61,16 +62,16 @@ article {
         justify-content: space-between;
         align-items: center;
         gap: 12px;
-        font-size: $tx-base;
+        font-size: mn.$tx-base;
         font-weight: 300;
         .cardTitle{
             height: 40px;
             overflow: hidden;
-            text-overflow: ellipsis;
+            text-overflow: ellipsis;         
             white-space: wrap;
         }
         .cardPrice{
-            font-size: $tx-l;
+            font-size: mn.$tx-l;
             font-weight: bold;
         }
     }

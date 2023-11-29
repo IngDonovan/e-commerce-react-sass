@@ -1,8 +1,9 @@
-@import '../../index.scss';
+// @import '../../index.scss';
+@use '../../index' as mn;
 
 .layout {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: $primary-color;
+    color: mn.$primary-color;
 }
