@@ -47,6 +47,7 @@
     text-decoration: underline;
     color: var(--font-color);
     font-weight: 600;
+    z-index: 1;
   }
 
   .card-side::after {
@@ -58,12 +59,14 @@
     text-decoration: none;
     color: var(--font-color);
     font-weight: 600;
+    z-index: 1;
   }
 
   .toggle {
     opacity: 0;
     width: 0;
     height: 0;
+    
   }
 
   .slider {
@@ -79,6 +82,7 @@
     bottom: 0;
     background-color: var(--bg-colorcolor);
     transition: 0.3s;
+    z-index: 2;
   }
   .slider:before {
     box-sizing: border-box;

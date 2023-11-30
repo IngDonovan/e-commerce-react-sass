@@ -14,9 +14,9 @@ const SignIn = () => {
       
       <section className="wrapper">
         <div className="card-switch">
-          <div className={`switch ${isCardFlipped ? "flipped" : ""}`} onClick={handleCardFlip}>
+          <div className={`switch ${isCardFlipped ? "flipped" : ""}`} >
             <input type="checkbox" className="toggle" />
-            <span className="slider"></span>
+            <span className="slider" onClick={handleCardFlip} ></span>
             <span className="card-side"></span>
             <article className="flip-card__inner">
               <div className="flip-card__front">
