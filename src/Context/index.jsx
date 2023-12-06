@@ -57,6 +57,12 @@ const EcomProvider = ({ children }) => {
     }
   };
 
+  //My account
+  const [account, setAccount]  = useState({});
+
+  //sign out
+  const [signOut, setSignOut] = useState(false);
+
   const initializeLocalStorage = () => {
     const accountInLocalStorage = localStorage.getItem('account');
     const signOutInLocalStorage = localStorage.getItem('sign-out');
@@ -133,6 +139,11 @@ const EcomProvider = ({ children }) => {
         isCardFlipped,
         setIsCardFlipped,
         handleCardFlip,
+        account,
+        setAccount,
+        signOut,
+        setSignOut,
+        initializeLocalStorage,
       }}
     >
       {children}
