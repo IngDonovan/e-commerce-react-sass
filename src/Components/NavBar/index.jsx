@@ -15,12 +15,19 @@ const NavBar = () => {
     toggleCheckoutSideMenu,
     isMenuMbOpen,
     toggleMenuMb,
+    setSignOut,
   } = useContext(EcomContext);
 
   const onCheckoutSideMenu = () =>{
     toggleCheckoutSideMenu();
     if (isProductDetailOpen) toggleProductDetail();
   };
+
+  const handleSignOut = () => {
+    const stringifiedSignOut = JSON.stringify(true);
+    localStorage.setItem('sign-out', stringifiedSignOut);
+    setSignOut(true);
+  }
 
   return (
     <header>
@@ -113,8 +120,10 @@ const NavBar = () => {
           </ul>
           <ul>
             <li>
-              <NavLink to="/sign-in" className="linkClass">
-                Sign In
+              <NavLink to="/sign-in" className="linkClass"
+                onClick={handleSignOut}
+              >
+                Sign Out
               </NavLink>
             </li>
             <li className="liShopCar">
