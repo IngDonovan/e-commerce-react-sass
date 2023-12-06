@@ -15,6 +15,7 @@ const NavBar = () => {
     toggleCheckoutSideMenu,
     isMenuMbOpen,
     toggleMenuMb,
+    signOut,
     setSignOut,
   } = useContext(EcomContext);
 
@@ -23,11 +24,79 @@ const NavBar = () => {
     if (isProductDetailOpen) toggleProductDetail();
   };
 
+  const signOutSesion = localStorage.getItem('sign-out');
+  const parsedSignOut = JSON.parse(signOutSesion);
+  const isUserSignOut = signOut || parsedSignOut;
+
   const handleSignOut = () => {
     const stringifiedSignOut = JSON.stringify(true);
     localStorage.setItem('sign-out', stringifiedSignOut);
     setSignOut(true);
   }
+
+  const renderView = () => {
+    if (isUserSignOut) {
+      return (
+        <div>
+          <ul>
+            <li>
+              <NavLink to="/sign-in" 
+                className="linkClass"
+                onClick={handleSignOut}
+              >
+                Sign In
+              </NavLink>
+            </li>
+            <li className="liShopCar">
+              <FiShoppingCart className="shopCar" 
+              onClick={onCheckoutSideMenu}
+              />
+              <p>
+                {count}
+              </p>
+            </li>
+          </ul>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <ul className="myAccount">
+            <li>email@gmail.com</li>
+            <li>
+              <NavLink to="/my-orders" className="linkClass">
+                My Orders
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/my-account" className="linkClass">
+                My Account
+              </NavLink>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <NavLink to="/sign-in" 
+                className="linkClass"
+                onClick={handleSignOut}
+              >
+                Sign Out
+              </NavLink>
+            </li>
+            <li className="liShopCar">
+              <FiShoppingCart className="shopCar" 
+              onClick={onCheckoutSideMenu}
+              />
+              <p>
+                {count}
+              </p>
+            </li>
+          </ul>
+        </div>
+      );
+    }
+  }
+
 
   return (
     <header>
@@ -104,38 +173,7 @@ const NavBar = () => {
             </li>
           </ul>
         </div>
-        <div>
-          <ul className="myAccount">
-            <li>email@gmail.com</li>
-            <li>
-              <NavLink to="/my-orders" className="linkClass">
-                My Orders
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/my-account" className="linkClass">
-                My Account
-              </NavLink>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              <NavLink to="/sign-in" className="linkClass"
-                onClick={handleSignOut}
-              >
-                Sign Out
-              </NavLink>
-            </li>
-            <li className="liShopCar">
-              <FiShoppingCart className="shopCar" 
-              onClick={onCheckoutSideMenu}
-              />
-              <p>
-                {count}
-              </p>
-            </li>
-          </ul>
-        </div>
+        {renderView()}
       </nav>
       <nav className={isMenuMbOpen ? "navMb" : "hidden"}>
         <ul className="categoriesMb">
