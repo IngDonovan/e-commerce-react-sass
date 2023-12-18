@@ -186,6 +186,10 @@
     padding: 5px 10px;
     outline: none;
   }
+  .flipSpan{
+    background-color: var(--bg-color-alt);
+    color: var(--bg-color);
+  }
   
   .flip-card__input::placeholder {
     color: var(--font-color-sub);
@@ -214,3 +218,8 @@
     color: var(--font-color);
     cursor: pointer;
   } 
+
+  .btnOut{
+    background-color: var(--input-focus);
+    color: var(--bg-color);
+  }
