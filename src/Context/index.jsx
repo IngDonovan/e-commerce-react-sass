@@ -143,7 +143,6 @@ const EcomProvider = ({ children }) => {
         setAccount,
         signOut,
         setSignOut,
-        initializeLocalStorage,
       }}
     >
       {children}

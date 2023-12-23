@@ -3,7 +3,7 @@
     --font-color: #323232;
     --font-color-sub: #666;
     --bg-color: #fff;
-    --bg-color-alt: #666;
+    --bg-color-alt: #9c9c9c;
     --main-color: #323232;
       
   }
@@ -188,6 +188,7 @@
   }
   .flipSpan{
     background-color: var(--bg-color-alt);
+    // opacity: 50%;
     color: var(--bg-color);
   }
   
@@ -206,7 +207,7 @@
   }
   
   .flip-card__btn {
-    margin: 20px 0 20px 0;
+    // margin: 20px 0 20px 0;
     width: 120px;
     height: 40px;
     border-radius: 5px;
@@ -217,9 +218,16 @@
     font-weight: 600;
     color: var(--font-color);
     cursor: pointer;
+    &:disabled {
+      // Estilos para cuando el botón está deshabilitado
+      opacity: 0.5; // Por ejemplo, reducir la opacidad
+      cursor: not-allowed; // Cambiar el cursor
+      // Otros estilos que desees aplicar cuando el botón está deshabilitado
+    }
   } 
 
   .btnOut{
     background-color: var(--input-focus);
     color: var(--bg-color);
   }
+
